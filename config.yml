@@ -10,7 +10,7 @@ collections:
         name: "languages"
         widget: "list"
         summary: 'Fields for {{fields.language}}'
-        collapsed: false,
+        collapsed: false
         min: 1
         fields:
           - { label: Language, name: language, widget: string, default: "en" }
