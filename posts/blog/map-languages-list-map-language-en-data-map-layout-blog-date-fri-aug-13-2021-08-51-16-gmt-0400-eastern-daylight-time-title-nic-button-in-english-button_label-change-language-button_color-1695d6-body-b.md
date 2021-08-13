@@ -1,4 +1,5 @@
 ---
+slug: nics-button
 languages:
   - language: en
     data:
