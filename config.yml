@@ -6,13 +6,25 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Language", name: "language", widget: "select", options: ["en","fr"], default: "en"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Button Label", name: "button_label", widget: "string"}
-      - {label: "Button Color", name: "button_color", widget: "color"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Languages"
+        name: "languages"
+        widget: "list"
+        summary: 'Fields for {{fields.language}}'
+        collapsed: false,
+        min: 1
+        fields:
+          - { label: Language, name: language, widget: string, default: "en" }
+          - label: Author
+            name: author
+            widget: object
+            fields:
+              - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+              - {label: "Language", name: "language", widget: "select", options: ["en","fr"], default: "en"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Button Label", name: "button_label", widget: "string"}
+              - {label: "Button Color", name: "button_color", widget: "color"}
+              - {label: "Publish Date", name: "date", widget: "datetime"}
+              - {label: "Body", name: "body", widget: "markdown"}
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
