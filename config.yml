@@ -14,13 +14,12 @@ collections:
         collapsed: false
         min: 1
         fields:
-          - { label: Language, name: language, widget: string, default: "en" }
-          - label: Author
-            name: author
+          - {label: "Language", name: "language", widget: "select", options: ["en","fr"], default: "en"}
+          - label: Data
+            name: data
             widget: object
             fields:
               - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-              - {label: "Language", name: "language", widget: "select", options: ["en","fr"], default: "en"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Button Label", name: "button_label", widget: "string"}
               - {label: "Button Color", name: "button_color", widget: "color"}
